@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { QuestionCard } from './components/QuestionCard'
+import  QuestionCard from './components/QuestionCard';
 import { fetchQuestions, Difficulty, QuestionState } from './API';
-import { GlobalStyle, Wrapper } from './App.styles';
+import { GlobalStyle, Wrapper } from './App.style';
 
 const TOTAL_QUESTIONS = 10;
 
@@ -82,12 +82,12 @@ function App() {
         </p> ) : null }
         {!loading && !gameOver ? (
         <QuestionCard
-          questionNum={number + 1}
-          totalQuestions={TOTAL_QUESTIONS}
-          question={questions[number].question}
-          answers={questions[number].answers}
-          userAnswer={userAnswers ? userAnswers[number] : undefined }
-          callback={checkAnswer}
+        questions={questions[number].question}
+        answers={questions[number].answers}
+        callback={checkAnswer}
+        questionNum={number + 1}
+        userAnswer={userAnswers ? userAnswers[number] : undefined }
+        totalQuestion={TOTAL_QUESTIONS}
         /> ) : null }
         {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 ? (
         <button className='next' onClick={nextQuestion}>

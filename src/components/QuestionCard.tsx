@@ -29,4 +29,4 @@ const QuestionCard: React.FC<Props>  = ({questions, answers,callback,userAnswer,
   )
 }
 
-export default QuestionCard
+export default QuestionCard;
